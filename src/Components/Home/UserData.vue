@@ -8,10 +8,7 @@
       <div class="w3-col w3-container m1 w3-deep-orange">
         <p>{{ icon }}</p>
       </div>
-      <div
-        class="w3-col w3-container m3 w3-light-blue clickable"
-        @click="data.schedules[index][0] == 'Hello'"
-      >
+      <div class="w3-col w3-container m3 w3-light-blue clickable">
         <p v-if="data.schedules[index][0] == true">👍</p>
         <p v-if="data.schedules[index][0] != true">X</p>
       </div>

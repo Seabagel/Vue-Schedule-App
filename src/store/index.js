@@ -10,6 +10,9 @@ export default createStore({
       return state.allUsers;
     },
   },
-  mutations: {},
+  mutations: {
+    // toggleUpvote
+    // Given an employeeID, change the user's vote of schedule
+  },
   actions: {},
 });
