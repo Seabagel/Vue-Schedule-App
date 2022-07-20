@@ -44,100 +44,19 @@
   </div>
 
   <div v-for="item in items" :key="item.employeeID">
-    <UserData :data="item" />
+    <user-data :data="item" />
   </div>
 
-  <div class="w3-row">
-    <div class="w3-col w3-container m4 w3-blue-gray">
-      <p>Total Coverage</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-pale-red">
-      <p>☀️</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-pale-green">
-      <p>0</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-pale-green">
-      <p>2</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-pale-green">
-      <p>0</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-green">
-      <p>2</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-pale-green">
-      <p>2</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-pale-green">
-      <p>2</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-pale-green">
-      <p>2</p>
-    </div>
-  </div>
-  <div class="w3-row">
-    <div class="w3-col w3-container m4 w3-blue-gray"><p>&nbsp;</p></div>
-    <div class="w3-col w3-container m1 w3-pale-red">
-      <p>☁️</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-pale-green">
-      <p>2</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-pale-green">
-      <p>2</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-pale-green">
-      <p>0</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-green">
-      <p>0</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-pale-green">
-      <p>0</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-pale-green">
-      <p>2</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-pale-green">
-      <p>2</p>
-    </div>
-  </div>
-  <div class="w3-row">
-    <div class="w3-col w3-container m4 w3-blue-gray"><p>&nbsp;</p></div>
-    <div class="w3-col w3-container m1 w3-pale-red">
-      <p>🌗</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-pale-green">
-      <p>2</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-pale-green">
-      <p>2</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-pale-green">
-      <p>0</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-green">
-      <p>0</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-pale-green">
-      <p>0</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-pale-green">
-      <p>0</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-pale-green">
-      <p>0</p>
-    </div>
-  </div>
+  <total-coverage />
 </template>
 
 <script>
+import TotalCoverage from "../Components/Home/TotalCoverage.vue";
 import UserData from "../Components/Home/UserData.vue";
 // @ is an alias to /src
 
 export default {
-  components: { UserData },
+  components: { UserData, TotalCoverage },
   name: "Home",
   setup() {
     return {
