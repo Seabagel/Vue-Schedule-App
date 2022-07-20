@@ -8,7 +8,6 @@
   </div>
 
   <total-coverage />
-  <button @click="actScheduleMorning">Whats upp</button>
 </template>
 
 <script>
@@ -27,7 +26,6 @@ export default {
     const store = useStore();
     return {
       items: computed(() => store.getters.getAllUsers),
-      actScheduleMorning: () => store.dispatch("actScheduleMorning", 51323),
     };
   },
 };

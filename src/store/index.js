@@ -11,12 +11,14 @@ export default createStore({
     },
   },
   mutations: {
-    mutateScheduleMorning(state, _employeeID) {
+    mutateScheduleMorning(state, params) {
       state.allUsers = [
         ...state.allUsers.map((user) => {
-          // 👇️ if id equals _employeeID replace object
-          if (user.employeeID === _employeeID) {
-            user.schedules[0] = [false, false];
+          // 👇️ if id equals params._employeeID replace object
+          if (user.employeeID === params.employeeID) {
+            user.schedules[params.schedule][params.biWeekly] = !user.schedules[
+              params.schedule
+            ][params.biWeekly];
           }
           // 👇️ otherwise return object as is
           return user;
@@ -25,8 +27,8 @@ export default createStore({
     },
   },
   actions: {
-    async actScheduleMorning({ commit }, _employeeID) {
-      commit("mutateScheduleMorning", _employeeID);
+    async actScheduleMorning({ commit }, payload) {
+      commit("mutateScheduleMorning", payload);
     },
   },
 });
