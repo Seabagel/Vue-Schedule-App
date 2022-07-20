@@ -1,47 +1,7 @@
 <template>
-  <!-- <div class="w3-row">
-    <div class="w3-col m1 w3-center w3-grey">1</div>
-    <div class="w3-col m1 w3-center">2</div>
-    <div class="w3-col m1 w3-center w3-grey">3</div>
-    <div class="w3-col m1 w3-center">4</div>
-    <div class="w3-col m1 w3-center w3-grey">5</div>
-    <div class="w3-col m1 w3-center">6</div>
-    <div class="w3-col m1 w3-center w3-grey">7</div>
-    <div class="w3-col m1 w3-center">8</div>
-    <div class="w3-col m1 w3-center w3-grey">9</div>
-    <div class="w3-col m1 w3-center">10</div>
-    <div class="w3-col m1 w3-center w3-grey">11</div>
-    <div class="w3-col m1 w3-center">12</div>
-  </div> -->
-  <div class="w3-row">
-    <div class="w3-col w3-container m4 w3-amber">
-      <p>Users:</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-dark-gray">
-      <p>☂️</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-yellow">
-      <p>M</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-yellow">
-      <p>T</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-yellow">
-      <p>W</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-orange">
-      <p>Th</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-yellow">
-      <p>F</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-yellow">
-      <p>Sa</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-yellow">
-      <p>Su</p>
-    </div>
-  </div>
+  <table-sizes />
+
+  <table-header />
 
   <div v-for="item in items" :key="item.employeeID">
     <user-data :data="item" />
@@ -51,12 +11,14 @@
 </template>
 
 <script>
+import TableHeader from "../Components/Home/TableHeader.vue";
+import TableSizes from "../Components/Home/TableSizes.vue";
 import TotalCoverage from "../Components/Home/TotalCoverage.vue";
 import UserData from "../Components/Home/UserData.vue";
 // @ is an alias to /src
 
 export default {
-  components: { UserData, TotalCoverage },
+  components: { UserData, TotalCoverage, TableHeader, TableSizes },
   name: "Home",
   setup() {
     return {
