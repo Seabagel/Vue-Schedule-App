@@ -1,97 +1,43 @@
 <template>
-  <div class="w3-row">
-    <div class="w3-col w3-container l4 w3-lime">
-      <p>{{ userData.username }}</p>
-    </div>
-    <div class="w3-col w3-container l1 w3-deep-orange">
-      <p>Shift.icon</p>
-    </div>
-    <div class="w3-col w3-container l1 w3-deep-purple">
-      <p>M</p>
-    </div>
-    <div class="w3-col w3-container l1 w3-deep-purple">
-      <p>T</p>
-    </div>
-    <div class="w3-col w3-container l1 w3-deep-purple">
-      <p>W</p>
-    </div>
-    <div class="w3-col w3-container l1 w3-deep-purple">
-      <p>Th</p>
-    </div>
-    <div class="w3-col w3-container l1 w3-deep-purple">
-      <p>F</p>
-    </div>
-    <div class="w3-col w3-container l1 w3-deep-purple">
-      <p>Sa</p>
-    </div>
-    <div class="w3-col w3-container l1 w3-deep-purple">
-      <p>Su</p>
-    </div>
-  </div>
-  <div class="w3-row">
-    <div class="w3-col w3-container l4 w3-white">
-      <p></p>
-    </div>
-    <div class="w3-col w3-container l1 w3-deep-orange">
-      <p>Shift.icon</p>
-    </div>
-    <div class="w3-col w3-container l1 w3-deep-purple">
-      <p>M</p>
-    </div>
-    <div class="w3-col w3-container l1 w3-deep-purple">
-      <p>T</p>
-    </div>
-    <div class="w3-col w3-container l1 w3-deep-purple">
-      <p>W</p>
-    </div>
-    <div class="w3-col w3-container l1 w3-deep-purple">
-      <p>Th</p>
-    </div>
-    <div class="w3-col w3-container l1 w3-deep-purple">
-      <p>F</p>
-    </div>
-    <div class="w3-col w3-container l1 w3-deep-purple">
-      <p>Sa</p>
-    </div>
-    <div class="w3-col w3-container l1 w3-deep-purple">
-      <p>Su</p>
-    </div>
-  </div>
-  <div class="w3-row">
-    <div class="w3-col w3-container l4 w3-white">
-      <p></p>
-    </div>
-    <div class="w3-col w3-container l1 w3-deep-orange">
-      <p>Shift.icon</p>
-    </div>
-    <div class="w3-col w3-container l1 w3-deep-purple">
-      <p>M</p>
-    </div>
-    <div class="w3-col w3-container l1 w3-deep-purple">
-      <p>T</p>
-    </div>
-    <div class="w3-col w3-container l1 w3-deep-purple">
-      <p>W</p>
-    </div>
-    <div class="w3-col w3-container l1 w3-deep-purple">
-      <p>Th</p>
-    </div>
-    <div class="w3-col w3-container l1 w3-deep-purple">
-      <p>F</p>
-    </div>
-    <div class="w3-col w3-container l1 w3-deep-purple">
-      <p>Sa</p>
-    </div>
-    <div class="w3-col w3-container l1 w3-deep-purple">
-      <p>Su</p>
+  <div v-for="(icon, index) in icons" :key="index">
+    <div class="w3-row">
+      <div class="w3-col w3-container m4 w3-lime">
+        <p v-if="index == 0">{{ data.username }}</p>
+        <p v-if="index > 0">&nbsp;</p>
+      </div>
+      <div class="w3-col w3-container m1 w3-deep-orange">
+        <p>{{ icon }}</p>
+      </div>
+      <div class="w3-col w3-container m3 w3-light-blue">
+        <p v-if="data.schedules[index][0] == 1">👍</p>
+        <p v-if="data.schedules[index][0] != 1">X</p>
+      </div>
+      <div class="w3-col w3-container m1 w3-blue">
+        <p v-if="data.schedules[index].includes(1)">👍</p>
+        <p v-if="!data.schedules[index].includes(1)">X</p>
+      </div>
+      <div class="w3-col w3-container m3 w3-light-blue">
+        <p v-if="data.schedules[index][1] == 1">👍</p>
+        <p v-if="data.schedules[index][1] != 1">X</p>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import { computed } from "@vue/runtime-core";
 export default {
+  name: "UserData",
   props: {
-    userData,
+    data: Object,
+  },
+  setup(props) {
+    const data = computed(() => props.data);
+
+    return {
+      data,
+      icons: ["☀️", "☁️", "🌗"],
+    };
   },
 };
 </script>
