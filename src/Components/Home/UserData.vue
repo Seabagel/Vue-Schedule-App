@@ -46,4 +46,7 @@ export default {
 .clickable {
   cursor: pointer;
 }
+.clickable:hover{
+  filter: brightness(125%);
+}
 </style>
