@@ -8,17 +8,20 @@
       <div class="w3-col w3-container m1 w3-deep-orange">
         <p>{{ icon }}</p>
       </div>
-      <div class="w3-col w3-container m3 w3-light-blue clickable">
-        <p v-if="data.schedules[index][0] == 1">👍</p>
-        <p v-if="data.schedules[index][0] != 1">X</p>
+      <div
+        class="w3-col w3-container m3 w3-light-blue clickable"
+        @click="data.schedules[index][0] == 'Hello'"
+      >
+        <p v-if="data.schedules[index][0] == true">👍</p>
+        <p v-if="data.schedules[index][0] != true">X</p>
       </div>
       <div class="w3-col w3-container m1 w3-blue clickable">
-        <p v-if="data.schedules[index].includes(1)">👍</p>
-        <p v-if="!data.schedules[index].includes(1)">X</p>
+        <p v-if="data.schedules[index].includes(true)">👍</p>
+        <p v-if="!data.schedules[index].includes(true)">X</p>
       </div>
       <div class="w3-col w3-container m3 w3-light-blue clickable">
-        <p v-if="data.schedules[index][1] == 1">👍</p>
-        <p v-if="data.schedules[index][1] != 1">X</p>
+        <p v-if="data.schedules[index][1] == true">👍</p>
+        <p v-if="data.schedules[index][1] != true">X</p>
       </div>
     </div>
   </div>
@@ -46,7 +49,7 @@ export default {
 .clickable {
   cursor: pointer;
 }
-.clickable:hover{
+.clickable:hover {
   filter: brightness(115%);
 }
 </style>

@@ -1,12 +1,15 @@
-import { createStore } from 'vuex'
+import { createStore } from "vuex";
+import jsonData from "./data.json";
 
 export default createStore({
   state: {
+    allUsers: jsonData,
   },
-  mutations: {
+  getters: {
+    getAllUsers(state) {
+      return state.allUsers;
+    },
   },
-  actions: {
-  },
-  modules: {
-  }
-})
+  mutations: {},
+  actions: {},
+});

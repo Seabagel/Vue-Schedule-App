@@ -15,15 +15,17 @@ import TableHeader from "../Components/Home/TableHeader.vue";
 import TableSizes from "../Components/Home/TableSizes.vue";
 import TotalCoverage from "../Components/Home/TotalCoverage.vue";
 import UserData from "../Components/Home/UserData.vue";
-import jsonData from "../store/data.json";
+import { useStore } from "vuex";
+import { computed } from "@vue/runtime-core";
 // @ is an alias to /src
 
 export default {
   components: { UserData, TotalCoverage, TableHeader, TableSizes },
   name: "Home",
   setup() {
+    const store = useStore();
     return {
-      items: jsonData,
+      items: computed(() => store.getters.getAllUsers),
     };
   },
 };
