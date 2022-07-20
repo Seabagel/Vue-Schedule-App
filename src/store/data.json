@@ -1,38 +1,20 @@
 [
   {
     "username": "Angelo",
-    "employeeID": "41323",
+    "employeeID": 41323,
     "schedules": [
-      [
-        false,
-        true
-      ],
-      [
-        true,
-        false
-      ],
-      [
-        true,
-        true
-      ]
+      [false, true],
+      [true, false],
+      [true, true]
     ]
   },
   {
     "username": "Timothy",
-    "employeeID": "51323",
+    "employeeID": 51323,
     "schedules": [
-      [
-        true,
-        false
-      ],
-      [
-        true,
-        false
-      ],
-      [
-        false,
-        false
-      ]
+      [true, false],
+      [true, false],
+      [false, false]
     ]
   }
 ]
