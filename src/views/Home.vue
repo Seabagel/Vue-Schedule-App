@@ -15,6 +15,7 @@ import TableHeader from "../Components/Home/TableHeader.vue";
 import TableSizes from "../Components/Home/TableSizes.vue";
 import TotalCoverage from "../Components/Home/TotalCoverage.vue";
 import UserData from "../Components/Home/UserData.vue";
+import jsonData from "../store/data.json";
 // @ is an alias to /src
 
 export default {
@@ -22,26 +23,7 @@ export default {
   name: "Home",
   setup() {
     return {
-      items: [
-        {
-          username: "Angelo",
-          employeeID: "41323",
-          schedules: [
-            [0, 1],
-            [1, 0],
-            [1, 1],
-          ],
-        },
-        {
-          username: "Timothy",
-          employeeID: "51323",
-          schedules: [
-            [1, 0],
-            [1, 0],
-            [0, 0],
-          ],
-        },
-      ],
+      items: jsonData,
     };
   },
 };

@@ -1,0 +1,38 @@
+[
+  {
+    "username": "Angelo",
+    "employeeID": "41323",
+    "schedules": [
+      [
+        0,
+        1
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        1
+      ]
+    ]
+  },
+  {
+    "username": "Timothy",
+    "employeeID": "51323",
+    "schedules": [
+      [
+        1,
+        0
+      ],
+      [
+        1,
+        0
+      ],
+      [
+        0,
+        0
+      ]
+    ]
+  }
+]

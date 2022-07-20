@@ -8,15 +8,15 @@
       <div class="w3-col w3-container m1 w3-deep-orange">
         <p>{{ icon }}</p>
       </div>
-      <div class="w3-col w3-container m3 w3-light-blue">
+      <div class="w3-col w3-container m3 w3-light-blue clickable">
         <p v-if="data.schedules[index][0] == 1">👍</p>
         <p v-if="data.schedules[index][0] != 1">X</p>
       </div>
-      <div class="w3-col w3-container m1 w3-blue">
+      <div class="w3-col w3-container m1 w3-blue clickable">
         <p v-if="data.schedules[index].includes(1)">👍</p>
         <p v-if="!data.schedules[index].includes(1)">X</p>
       </div>
-      <div class="w3-col w3-container m3 w3-light-blue">
+      <div class="w3-col w3-container m3 w3-light-blue clickable">
         <p v-if="data.schedules[index][1] == 1">👍</p>
         <p v-if="data.schedules[index][1] != 1">X</p>
       </div>
@@ -41,3 +41,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.clickable {
+  cursor: pointer;
+}
+</style>
