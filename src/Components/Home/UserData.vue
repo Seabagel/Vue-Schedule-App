@@ -34,7 +34,6 @@
 import { useStore } from "vuex";
 import { computed } from "@vue/runtime-core";
 export default {
-  name: "UserData",
   props: {
     data: Object,
   },

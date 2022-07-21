@@ -21,7 +21,6 @@ import { computed } from "@vue/runtime-core";
 
 export default {
   components: { UserData, TotalCoverage, TableHeader, TableSizes },
-  name: "Home",
   setup() {
     const store = useStore();
     return {

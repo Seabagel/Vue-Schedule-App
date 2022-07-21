@@ -6,30 +6,21 @@
     <div class="w3-col w3-container m1 w3-dark-gray">
       <p>☂️</p>
     </div>
-    <div class="w3-col w3-container m1 w3-yellow">
-      <p>M</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-yellow">
-      <p>T</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-yellow">
-      <p>W</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-orange">
-      <p>Th</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-yellow">
-      <p>F</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-yellow">
-      <p>Sa</p>
-    </div>
-    <div class="w3-col w3-container m1 w3-yellow">
-      <p>Su</p>
+    <div v-for="(day, index) in days" :key="index">
+      <div class="w3-col w3-container m1 w3-yellow">
+        <p>{{ days[index] }}</p>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {};
+export default {
+  setup() {
+    const _days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+    return {
+      days: _days,
+    };
+  },
+};
 </script>
