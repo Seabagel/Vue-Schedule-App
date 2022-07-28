@@ -4,8 +4,8 @@
 
     <table-header :title="'Users'" />
 
-    <div v-for="item in items" :key="item.employeeID">
-      <user-data :data="item" />
+    <div v-for="(item, index) in items" :key="item.employeeID">
+      <user-data :data="item" :_index="index++" />
     </div>
     <div class="border-users"></div>
 
@@ -46,7 +46,7 @@ div.contain {
 }
 
 .border-coverage {
-  border-bottom: 4px solid lightslategray;
+  border-bottom: 4px solid #eace86;
 }
 
 .border-users {

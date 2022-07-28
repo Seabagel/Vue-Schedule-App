@@ -1,7 +1,11 @@
 <template>
-  <div v-for="(icon, index) in icons" :key="index">
+  <div
+    v-for="(icon, index) in icons"
+    :key="index"
+    :class="[_index % 2 ? '' : 'darker-shade']"
+  >
     <div class="w3-row">
-      <div class="w3-col w3-container m4 w3-lime">
+      <div class="w3-col w3-container m4 w3-gray">
         <p v-if="index == 0">{{ data.username }}</p>
         <p v-if="index > 0">&nbsp;</p>
       </div>
@@ -34,6 +38,7 @@ import { computed } from "@vue/runtime-core";
 export default {
   props: {
     data: Object,
+    _index: Number,
   },
   setup(props) {
     const store = useStore();
@@ -48,6 +53,7 @@ export default {
 
     return {
       data: computed(() => props.data),
+      _index: computed(() => props._index),
       icons: ["☀️", "☁️", "🌗"],
       toggleSchedule,
     };
@@ -65,5 +71,8 @@ export default {
 
 div .w3-rest {
   padding: 0;
+}
+.darker-shade {
+  filter: hue-rotate(-12deg) brightness(92%) saturate(99%);
 }
 </style>

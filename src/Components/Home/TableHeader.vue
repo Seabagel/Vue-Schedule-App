@@ -1,11 +1,11 @@
 <template>
   <div class="w3-row">
-    <div class="w3-col w3-container m4 w3-amber">
+    <div class="w3-col w3-container m4 w3-dark-gray">
       <p>
         <b>{{ title }}:</b>
       </p>
     </div>
-    <div class="w3-col w3-container m1 w3-dark-gray">
+    <div class="w3-col w3-container m1 w3-blue">
       <p>☂️</p>
     </div>
     <div v-for="(day, index) in days" :key="index">
