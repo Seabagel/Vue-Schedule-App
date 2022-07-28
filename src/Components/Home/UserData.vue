@@ -17,7 +17,7 @@
           <p v-if="data.schedules[index][0] != true"><strong>X</strong></p>
         </div>
         <div
-          class="w3-half w3-container w3-light-blue clickable"
+          class="w3-half w3-container w3-khaki clickable"
           @click="toggleSchedule(index, 1)"
         >
           <p v-if="data.schedules[index][1] == true"><strong>👍</strong></p>

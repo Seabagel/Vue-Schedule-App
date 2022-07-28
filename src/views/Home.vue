@@ -1,5 +1,5 @@
 <template>
-  <div class="contain">
+  <div class="contain border-coverage">
     <table-sizes />
 
     <table-header :title="'Users'" />
@@ -7,6 +7,7 @@
     <div v-for="item in items" :key="item.employeeID">
       <user-data :data="item" />
     </div>
+    <div class="border-users"></div>
 
     <total-coverage />
   </div>
@@ -38,9 +39,17 @@ export default {
 }
 
 div.contain {
-  min-width: 720px;
+  min-width: min(640px, 90vw);
   width: 90vw;
   max-width: 1080px;
   margin: 0 auto;
+}
+
+.border-coverage {
+  border-bottom: 4px solid lightslategray;
+}
+
+.border-users {
+  border-bottom: 4px solid #e7f757;
 }
 </style>
