@@ -1,7 +1,9 @@
 <template>
   <div class="w3-row">
     <div class="w3-col w3-container m4 w3-amber">
-      <p>Users:</p>
+      <p>
+        <b>{{ title }}:</b>
+      </p>
     </div>
     <div class="w3-col w3-container m1 w3-dark-gray">
       <p>☂️</p>
@@ -15,11 +17,16 @@
 </template>
 
 <script>
+import { computed } from "@vue/runtime-core";
 export default {
-  setup() {
+  props: {
+    title: String,
+  },
+  setup(props) {
     const _days = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
     return {
       days: _days,
+      title: computed(() => props.title),
     };
   },
 };

@@ -1,13 +1,15 @@
 <template>
-  <table-sizes />
+  <div class="contain">
+    <table-sizes />
 
-  <table-header />
+    <table-header :title="'Users'" />
 
-  <div v-for="item in items" :key="item.employeeID">
-    <user-data :data="item" />
+    <div v-for="item in items" :key="item.employeeID">
+      <user-data :data="item" />
+    </div>
+
+    <total-coverage />
   </div>
-
-  <total-coverage />
 </template>
 
 <script>
@@ -33,5 +35,12 @@ export default {
 <style scoped>
 * {
   user-select: none;
+}
+
+div.contain {
+  min-width: 720px;
+  width: 90vw;
+  max-width: 1080px;
+  margin: 0 auto;
 }
 </style>
